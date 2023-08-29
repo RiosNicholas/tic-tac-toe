@@ -1,13 +1,18 @@
-#!/usr/bin/env python3
-# FIXME: resolve import issues
-from models.game_state import GameState
+from game_state import GameState
 
 class TicTacToe:
-    def __init__(self, current_player):
+    def __init__(self):
         self.current_player = current_player 
+        self.opposite_player = 'O' if current_player == 'X' else 'X'
         self.board = ['?' for _ in range(10)]
         self.winner = None
         self.game_state = GameState.ONGOING
+
+    
+    # SWITCHES CURRENT PLAYER AFTER EACH TURN
+    def switch_player(self):
+        self.current_player, self.opposite_player = self.opposite_player, self.current_player
+
 
     # PRINTS A 3X3 GAME BOARD
     def print_board(board):
@@ -17,7 +22,6 @@ class TicTacToe:
                 print("|" + board[row] + "|", end="")
             print("\n---------") if row < 2 else ""
             row += 1 
-    print_board(board)
 
 
     # TAKES USER INPUT TO SELECT A CELL AND CHECK IF IT'S ALREADY TAKEN
@@ -29,6 +33,7 @@ class TicTacToe:
         if selected_cell != '?': 
             return False 
         return True
+
 
     # CHECKS IF SELECTED CELL IS TAKEN AND PLACES TOKEN
     def place_token(board, current_player):
