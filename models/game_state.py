@@ -8,12 +8,15 @@ class GameState(Enum):
     ONGOING = 3
     # INVALID = 4
 
+    # TODO : create function
     def check_if_won():
         pass
 
+    # TODO : create function
     def check_if_draw():
         pass
 
+    # TODO : create function
     def check_if_ongoing():
         pass
 
