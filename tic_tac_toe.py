@@ -40,7 +40,7 @@ class TicTacToe:
         while True:
             try:
                 # Takes user input in the format "row,col", extracts the values after removing whitespace
-                row, col = map(int(input("Select a row and column to place a token (row, col):")).replace(" ", "").split(","))
+                row, col = map(int, input("Select a row and column to place a token (row, col):")).replace(" ", "").split(",")
 
                 # Validating the token placement selection
                 if 0 <= row < 3 and 0 <= col < 3:
