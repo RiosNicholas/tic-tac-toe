@@ -62,6 +62,3 @@ class TicTacToe:
 
             except ValueError:
                 print("Invalid input; please try again.")
-
-            
-    
