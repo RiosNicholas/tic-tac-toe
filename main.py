@@ -1,4 +1,4 @@
-from game_state import GameState
+from game_state import *
 from tic_tac_toe import TicTacToe
 
 print("Welcome to Tic-Tac-Toe...")
@@ -32,7 +32,7 @@ def main():
         game.place_token(game.current_player)
         
         # Checks the game state for win or draw after token is placed
-        game.game_state = check_game_state(game.board, game.current_player)
+        game.game_state = check_game_state()
 
         # Switches current player for the next turn
         game.switch_player()
